@@ -28,6 +28,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: deploy to aws S3
         run: |
-          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws s3 sync . s3://demo-githubactions --delete
+          aws configure set aws_access_key_id ${{ Access_key_ID }}
+          aws configure set aws_secret_access_key ${{ Secret_access_key }}
+          aws s3 sync .github/index.html s3:// --delete
