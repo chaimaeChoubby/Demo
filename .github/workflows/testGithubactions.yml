@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Deploy to S3
+name: test Github Actions
 
 # Controls when the workflow will run
 on:
@@ -22,12 +22,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      
+      - name: chekout repository
       - uses: actions/checkout@v4
-
-     
-      - name: deploy to aws S3
-        run: |
-          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws s3 sync .github/index.html s3://demogithubbucket --delete
+      
+      - name: Print a message
+        run: echo "hello, github actions!"
